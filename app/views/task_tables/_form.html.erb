@@ -1,0 +1,47 @@
+<%= form_with(model: task_table, local: true) do |form| %>
+  <% if task_table.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task_table.errors.count, "error") %> prohibited this task_table from being saved:</h2>
+
+      <ul>
+      <% task_table.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.select :product_id, product_options, {} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :customer_id %>
+    <%= form.select :customer_id, customer_options, {} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :count %>
+    <%= form.number_field :count, id: :task_table_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :special %>
+    <%= form.text_area :special, id: :task_table_special %>
+  </div>
+
+  <div class="field">
+    <%= form.label :package %>
+    <%= form.text_area :package, id: :task_table_package %>
+  </div>
+
+  <div class="field">
+    <%= form.label :shipment %>
+    <%= form.text_area :shipment, id: :task_table_shipment %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('product') %></strong>
+  <%= @stock.product.name %>
+</p>
+
+<p>
+  <strong><%= t('description') %></strong>
+  <%= @stock.description %>
+</p>
+
+<p>
+  <strong><%= t('input_date') %></strong>
+  <%= @stock.input_date %>
+</p>
+
+<p>
+  <strong><%= t('count') %></strong>
+  <%= @stock.count %>
+</p>
+
+<%= link_to  t('edit'), edit_stock_path(@stock) %> |
+<%= link_to t('back'), stocks_path %>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('production_plan') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @production_plans.each do |production_plan| %>
+      <tr>
+        <td><%= production_plan.name %></td>
+        <td><%= production_plan.start_time %></td>
+        <td><%= production_plan.shipment_time %></td>
+        <td><%= link_to t('show'), production_plan %></td>
+        <td><%= link_to t('edit'), edit_production_plan_path(production_plan) %></td>
+        <td><%= link_to t('destroy'), production_plan, method: :delete, data: { confirm: t('are_yor_sure') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('new_production_plan'), new_production_plan_path %>

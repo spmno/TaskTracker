@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('name') %></strong>
+  <%= @customer.name %>
+</p>
+
+<%= link_to t('edit'), edit_customer_path(@customer) %> |
+<%= link_to t('back'), customers_path %>

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= t('stock') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= t('product') %></th>
+      <th><%= t('description') %></th>
+      <th><%= t('input_date') %></th>
+      <th><%= t('count') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stocks.each do |stock| %>
+      <tr>
+        <td><%= stock.product.name %></td>
+        <td><%= stock.description %></td>
+        <td><%= stock.input_date %></td>
+        <td><%= stock.count %></td>
+        <td><%= link_to t('show'), stock %></td>
+        <td><%= link_to t('edit'), edit_stock_path(stock) %></td>
+        <td><%= link_to t('destroy'), stock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('new_stock'), new_stock_path %>

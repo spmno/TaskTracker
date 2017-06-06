@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @production_plan.name %>
+</p>
+
+<p>
+  <strong><%= t('start_time') %></strong>
+  <%= @production_plan.start_time %>
+</p>
+
+<p>
+  <strong><%= t('shipment_time') %></strong>
+  <%= @production_plan.shipment_time %>
+</p>
+
+
+<%= link_to t('edit'), edit_production_plan_path(@production_plan) %> |
+<%= link_to t('back'), production_plans_path %>
